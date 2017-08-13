@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<!---------------------------stylesheets----------------------------------->
+<link href="dependencies/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/loginStyle.css" rel="stylesheet">
+<link href="css/footer.css" rel="stylesheet">
+<link href="dependencies/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="css/form-basic.css" rel="stylesheet">
+<link href="css/slick.css" rel="stylesheet">
+<link href="css/slick-theme.css" rel="stylesheet">
+
+<!--------------------------js dependencies--------------------------------->
+<script src="dependencies/angular/angular.js"></script>
+<script src="dependencies/node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script src="dependencies/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+<!---------------------------js files--------------------------------------->
+<script src="app.js"></script>
+
+
+
+<body ng-app="app" ng-controller="app">
+<nav class="navbar navbar-default" style="background-color: white; border-color: white;">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-center" style="padding-top: 5%; padding-left: 45%;">
+           <li><button type="button" ng-click="Func.changeStateSpent()" ng-class="{activee : Data.thatButton=='spent',notActivee:Data.thatButton!='spent'}" class="btn btn-outline-primary" style="border-radius: 20px 0 0 20px">خرج کن<a style="padding-left: 10px;display: inline-block;color:inherit;"><i class="fa fa-chain-broken" style="color:inherit;" aria-hidden="true"></i></a></button></li>
+            <li><button type="button" ng-click="Func.changeStateCollect()" ng-class="{activee : Data.thatButton=='collect',notActivee:Data.thatButton!='collect'}" class="btn btn-outline-primary" style="border-radius: 0 20px 20px 0">جمع کن<a style="padding-left: 10px;display: inline-block;color:inherit;"><i class="fa fa-star-o" style="color:inherit;" aria-hidden="true"></i></a></button></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li style="font-size: x-small; text-align: right">
+                <a style="padding: 15px 0px 5px 0px;">
+                        کاربر مهمان
+                </a>
+                <a style="padding: 0px 0px 0px 0px">
+                    <a style="padding: 0px 5px 0px 0px;display: inline-block">۲۰</a>
+                    <a style="padding: 0;display: inline-block"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                </a>
+            </li>
+            <li><a class="navbar-brand" href="#/mainPage">
+                <img alt="Profile Picture" src="static/images/profPicAvatar.png" height="42" width="42">
+            </a></li>
+            <li><a class="navbar-brand" href="#/mainPage">
+                <img alt="Logo" src="static/images/rahnema.svg" height="42" width="42">
+            </a></li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+</nav>
+<div class="container" id="body" style="margin: 0; width: 100%; padding: 0;">
+    <div class="container" style="margin: 0; width: 100%; padding: 0; ">
+        <div class="row" style="width: 100%; padding: 0;">
+            <div class="col-md-12 slider" style="padding: 0;">
+                <div ng-repeat="item in Data.searchResultTemp.cards" class="col-md-3 col-sm-12" style="padding-left: 0; padding-right: 0;margin-right: 15px; margin-left: 15px; border-radius: 8px;">
+                    <div class="thumbnail">
+                        <div style=" height: 250px; border-radius: 5px;" ng-style="item.color"></div>
+                        <div class="caption" style="text-align: right">
+                            <h3 style="text-align: right">{{item.title}}</h3>
+                            <p>{{item.story}}</p>
+                            <p>
+                                <div class="row" style="text-align: center;">
+                                    <div class="col-md-6">امتیاز ۵<i class="fa fa-star-o" aria-hidden="true" style="padding-left: 5px; padding-top: 20px;"></i></div>
+                                    <div class="col-md-6">روز ۲<i class="fa fa-clock-o" aria-hidden="true" style="padding-left: 5px; padding-top: 20px;"></i></div>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer-distributed ">
+    <hr style="border:none; height: 1px; color: #CCC; background-color: #CCC; margin-bottom: 0px;">
+    <div class="footer-left">
+        <a class="navbar-brand" style="padding-left: 0px;" href="#">
+            <img alt="Logo" src="static/images/rahnema.svg" height="42" width="42">
+        </a>
+
+        <p class="footer-links">
+            <a href="#">درباره ی ما</a>
+            ·
+            <a href="#">وبلاگ</a>
+            ·
+            <a href="#">خانه</a>
+        </p>
+
+        <p class="footer-company-name"> &copy; رهنما</p>
+    </div>
+
+    <div class="footer-center">
+
+
+    </div>
+
+    <div class="footer-right">
+
+
+        <div class="footer-icons" style="text-align: right">
+
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a>
+
+
+        </div>
+
+    </div>
+
+</footer>
+</body>
+</html>
